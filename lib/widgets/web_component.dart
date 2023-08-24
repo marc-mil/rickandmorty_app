@@ -1,0 +1,25 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
+
+
+class ShoppingCheckout extends StatelessWidget implements PreferredSizeWidget {
+  const ShoppingCheckout({super.key});
+
+  final String htmlData =
+    r"""
+      <iframe id="ytplayer" type="text/html" width="640" height="360"
+  src="http://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"
+  frameborder="0"/>  
+    """;
+
+  @override
+  Widget build(BuildContext context) {
+    return HtmlWidget(
+      htmlData,
+    );
+  }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+}
+
